@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moraes Response</title>
+    <link rel="icon" href="https://i.imgur.com/YJk8r8E.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark">
+    <button id="themeToggle" class="theme-toggle-button">🌙</button>
+    <div class="container">
+        <div class="content">
+            <h1 id="title">Moraes Response</h1>
+            <hr>
+            <p>Neste site, você encontrará cheats para "facilitar" suas tarefas nas plataformas do CMSP. Nenhum dos hacks foi criado por mim, mas alguns foram editados para serem melhorados.</p>
+            <hr>
+            <h3><strong>Cheats Atualizados</strong></h3>
+            <br>
+            <div class="button-container">
+                <button id="cmspButton" class="button"><i class="fas fa-school"></i> CMSP</button>
+                <button id="speakButton" class="button"><i class="fas fa-comments"></i> SPeak</button>
+            </div>
+            <hr>
+            <p class="footer-text">"O governo não tem a mínima ideia do que os alunos enfrentam em suas jornadas educacionais e ainda querem afirmar que as recentes mudanças no sistema de ensino foram para <strong>melhor</strong>. Sinceramente, parece que essa foi uma das piores decisões que poderiam ter tomado."</p>
+            <p class="footer-text">© 2024 Direitos reservados a Guilherme de Moraes Souza.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        async function copyToClipboard(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar o script');
+                }
+                const code = await response.text();
+                await navigator.clipboard.writeText(code);
+                alert('Script copiado com sucesso! Você será redirecionado para um Tutorial.');
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao copiar o Script. Tente novamente.');
+            }
+        }
+
+        document.getElementById('cmspButton').addEventListener('click', () => {
+            window.open('https://cmsp.vercel.app/src/cheatcmsp.html', '_blank');
+        });
+
+        document.getElementById('speakButton').addEventListener('click', async () => {
+            await copyToClipboard('https://raw.githubusercontent.com/DarkMod3/CMSP-Plataformas-Hacks/Main/Hacks/SPeak.js');
+            window.open('https://youtu.be/GF5bsN5eBF8', '_blank');
+        });
+
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            document.body.classList.toggle('light');
+            themeToggle.innerHTML = document.body.classList.contains('dark') ? '🌙' : '☀️';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+/* Estilos Globais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    user-select: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.container {
+    max-width: 600px;
+    width: 90%;
+    padding: 30px;
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.theme-toggle-button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.light .container {
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.light h1, .light h2, .light h3 {
+    color: #000000;
+}
+
+.light p {
+    color: #333333;
+}
+
+.light .button {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+.light .button:hover {
+    background-color: #d5d5d5;
+}
+
+h1 {
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #b0b0b0;
+    margin-bottom: 30px;
+    transition: color 0.3s;
+    font-size: 1.1em;
+}
+
+p:hover {
+    color: #ffffff;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Helvetica, "sans-serif";
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 100px;
+    background: white;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px;
+}
+
+button:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+    background: #d5d5d5;
+}
+
+.button i {
+    margin-right: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #b0b0b0;
+    margin: 20px 0;
+    transition: background 0.3s;
+}
+
+.light hr {
+    background: #333;
+}
+
+.footer-text {
+    color: #b0b0b0;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-text strong {
+    color: #ff6f61;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    .button {
+        padding: 12px 15px;
+        font-size: 14px;
+    } 
+}
