@@ -13,49 +13,42 @@
 <style>
 
   body {
+  background-color: #121212; /* Cor de fundo preta */
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove padding */
+}
 
-    background-color: #121212; /* Cor de fundo preta */
+/* Estilos gerais para dispositivos maiores */
+.iframe-container {
+  width: 100%;
+  height: 100vh; /* Usa 100% da altura da tela */
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove padding */
+}
 
-    margin: 0; /* Remove margens */
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* Remove a borda do iframe */
+  display: block; /* Remove espaços em branco em torno do iframe */
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove padding */
+}
 
-    padding: 0; /* Remove padding */
-
-  }
-
-
-
+/* Ajustes para telas menores, como celulares */
+@media only screen and (max-width: 768px) {
   .iframe-container {
-
-    width: 100%;
-
-    height: 100vh; /* Usa 100% da altura da tela */
-
-    overflow: hidden;
-
-    border-radius: 20px;
-
-    margin: 0; /* Remove margens */
-
-    padding: 0; /* Remove padding */
-
+    height: 70vh; /* Usa 70% da altura da tela em dispositivos móveis */
+    border-radius: 10px; /* Diminui a borda arredondada em telas menores */
   }
-
-
 
   iframe {
-
-    width: 100%;
-
     height: 100%;
-
-    border: none; /* Remove a borda do iframe */
-
-    display: block; /* Remove espaços em branco em torno do iframe */
-
-    margin: 0; /* Remove margens */
-
-    padding: 0; /* Remove padding */
-
+    width: 100%;
+    border-radius: 10px;
   }
-
+}
+  
 </style>
