@@ -155,3 +155,53 @@ hr {
         font-size: 14px;
     } 
 }
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  background-image: url('462306540_565283869263339_6642480768718616810_n.jpg');
+  background-size: cover;
+  border-radius: 50%;
+  position: fixed;
+  top: 1.5rem;
+  left: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+.tooltip {
+  position: fixed;
+  top: calc(1.5rem + 50px);
+  left: 1rem;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.profile-pic:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .profile-pic {
+      width: 40px;
+      height: 40px;
+  }
+  
+  .tooltip {
+      padding: 6px 10px;
+  }
+}
