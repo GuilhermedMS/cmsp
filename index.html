@@ -1,141 +1,166 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Moraes Response</title>
-
+    <title>Site Moderno</title>
     <link rel="icon" href="https://i.imgur.com/YJk8r8E.png">
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <link rel="stylesheet" href="styles.css">
-
-</head>
-
-<body class="dark">
-
-    <button id="themeToggle" class="theme-toggle-button">🌙</button>
-
-    <div class="container">
-
-        <div class="content">
-
-            <h1 id="title">Moraes Response</h1>
-
-            <hr>
-
-            <p>Neste site, você encontrará cheats para "facilitar" suas tarefas nas plataformas do CMSP. Nenhum dos hacks foi criado por mim, mas alguns foram editados para serem melhorados.</p>
-
-            <hr>
-
-            <h3><strong>Cheats Atualizados</strong></h3>
-
-            <br>
-
-            <div class="button-container">
-
-                <button id="cmspButton" class="button"><i class="fas fa-school"></i> CMSP</button>
-
-                <button id="speakButton" class="button"><i class="fas fa-comments"></i> SPeak</button>
-
-            </div>
-
-            <hr>
-
-            <p class="footer-text">"O governo não tem a mínima ideia do que os alunos enfrentam em suas jornadas educacionais e ainda querem afirmar que as recentes mudanças no sistema de ensino foram para <strong>melhor</strong>. Sinceramente, parece que essa foi uma das piores decisões que poderiam ter tomado."</p>
-
-            <p class="footer-text">© 2024 Direitos reservados a Guilherme de Moraes Souza.</p>
-
-        </div>
-
-    </div>
-
-
-
-    <div id="notificationContainer" class="notification-container"></div>
-
-
-
-    <script>
-
-        document.addEventListener('contextmenu', function(e) {
-
-            e.preventDefault();
-
-        });
-
-
-
-        async function copyToClipboard(code) {
-
-            try {
-
-                await navigator.clipboard.writeText(code);
-
-                alert('Script copiado com sucesso! Você será redirecionado para um Tutorial.');
-
-            } catch (error) {
-
-                console.error('Erro:', error);
-
-                alert('Erro ao copiar o Script. Tente novamente.');
-
-            }
-
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            user-select: none;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
+        .container {
+            max-width: 600px;
+            width: 90%;
+            padding: 30px;
+            background-color: #1e1e1e;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
 
+        .theme-toggle-button {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: transparent;
+            border: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+        }
 
-        document.getElementById('cmspButton').addEventListener('click', () => {
+        h1 {
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
 
-            window.open('https://cmspcheeto.squareweb.app/', '_blank');
+        p {
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
 
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        button {
+            cursor: pointer;
+            font-weight: 700;
+            font-family: Helvetica, "sans-serif";
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 100px;
+            background: white;
+            color: #121212;
+            border: 1px solid transparent;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            background: #d5d5d5;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #b0b0b0;
+            margin: 20px 0;
+        }
+
+        /* Tema Claro */
+        .light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .light .container {
+            background-color: #f1f1f1;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .light h1 {
+            color: #000000;
+        }
+
+        .light p {
+            color: #333333;
+        }
+
+        .light button {
+            background-color: #e0e0e0;
+            color: #000000;
+        }
+
+        .light button:hover {
+            background-color: #d5d5d5;
+        }
+    </style>
+</head>
+<body>
+    <button id="themeToggle" class="theme-toggle-button">🌙</button>
+    <div class="container">
+        <h1>Site Moderno</h1>
+        <p>Este site é um exemplo de design moderno, com tema escuro AMOLED e layout centralizado.</p>
+        <hr>
+        <div class="button-container">
+            <button id="cmspButton">CMSP</button>
+            <button id="speakButton">SPeak</button>
+        </div>
+        <hr>
+        <p class="footer-text">"O governo não tem a mínima ideia do que os alunos enfrentam em suas jornadas educacionais e ainda querem afirmar que as recentes mudanças no sistema de ensino foram para <strong>melhor</strong>. Sinceramente, parece que essa foi uma das piores decisões que poderiam ter tomado."</p>
+        <p class="footer-text">© 2024 Direitos reservados a Guilherme de Moraes Souza.</p>
+    </div>
+
+    <script>
+        // Alternar Tema
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+            themeToggle.textContent = document.body.classList.contains('light') ? '🌑' : '🌙';
         });
 
-
+        // Botões CMSP e SPeak
+        document.getElementById('cmspButton').addEventListener('click', () => {
+            window.open('https://cmspcheeto.squareweb.app/', '_blank');
+        });
 
         document.getElementById('speakButton').addEventListener('click', async () => {
-
             const code = `javascript:fetch(\`https://res.cloudinary.com/dq36xqdoe/raw/upload/v\${Math.floor(Math.random() * 1000000)}/main_oqidn5.js\`).then(r => r.text()).then(r => eval(r))`;
-
-            await copyToClipboard(code);
-
-            window.open('https://youtu.be/GF5bsN5eBF8', '_blank');
-
+            try {
+                await navigator.clipboard.writeText(code);
+                alert('Script copiado com sucesso! Você será redirecionado para um Tutorial.');
+                window.open('https://youtu.be/GF5bsN5eBF8', '_blank');
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao copiar o Script. Tente novamente.');
+            }
         });
-
-
-
-        const themeToggle = document.getElementById('themeToggle');
-
-        themeToggle.addEventListener('click', () => {
-
-            document.body.classList.toggle('dark');
-
-            document.body.classList.toggle('light');
-
-            themeToggle.innerHTML = document.body.classList.contains('dark') ? '🌙' : '☀️';
-
-        });
-
     </script>
-
-
-
-    <a href="https://www.instagram.com/guidevexx/" target="_blank" class="profile-pic">
-
-        <div class="tooltip">Guilherme de Moraes Souza</div>
-
-    </a>
-
 </body>
-
 </html>
